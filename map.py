@@ -1,8 +1,6 @@
 from PIL import Image
 import numpy as np
 
-image = Image.open("cat.jpg").convert("RGB")
-
 def generate_lut(size):
   grid = np.linspace(0, 255, size - 1, dtype=np.uint8)
   lut = np.stack(np.meshgrid(grid, grid, grid, indexing="ij"), axis=-1)
